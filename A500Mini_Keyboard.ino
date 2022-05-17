@@ -1,0 +1,154 @@
+//##################################################################################################
+//## Keyboard software for the A500Mini. It is created for an Arduino Leonardo, using it pinout.  ##
+//## The final implementation is for 32U4 micro directly, to the RetroWiki's keyboard design.     ##
+//## The mechanical part was created between Kikems_retro and Lince (ea4gge).                     ##
+//## Soft and Electronic design was made by Lince.                                                ##
+//## This soft was inspired on the soft of the project "Armapad36v2". I has it as example for this##
+//## Many thanks to the creator of the software, it was esential for my own one                   ## 
+//## You are free to use this code under GNU General Public License. You can use, distribute and  ##
+//## modify  ONLY for free. Read the License's Document for details.                              ##
+//##################################################################################################
+
+#include <Keypad.h>
+#include <Keyboard.h>
+const byte ROWS = 8; // rows
+const byte COLS = 12; // columns
+byte colPins[COLS] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}; //row pinouts of the keypad
+byte rowPins[ROWS] = {12, 13, 18, 19, 20, 21, 22, 23}; //column pinouts of the keypad
+//
+//define the keys of the keyboard. 3 american Amiga layout, one for normal, one for shift and one for capslock
+//
+char directKeys[ROWS][COLS] = {
+  
+  {KEY_ESC, KEY_F1, KEY_F2, KEY_F3, KEY_F4, KEY_F5, KEY_F6, KEY_F7, KEY_F8, KEY_F9, KEY_F10, KEY_BACKSPACE},
+  {39, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-'},
+  {KEY_TAB, 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '['},
+  {KEY_LEFT_CTRL, KEY_CAPS_LOCK,'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'},
+  {KEY_LEFT_SHIFT, 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', KEY_RIGHT_SHIFT},
+  {KEY_LEFT_ALT, KEY_LEFT_GUI, ' ', KEY_RIGHT_GUI, KEY_RIGHT_ALT, KEY_DELETE, KEY_PAGE_DOWN, KEY_LEFT_ARROW, KEY_UP_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW, KEY_RETURN},
+  {'=', '\\', ']', '#', '(', ')', '/', '*', '-', '+', KEY_RETURN, '.'},
+  {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', ' ', }
+ 
+};
+
+char shiftKeys[ROWS][COLS] = {
+  
+  {KEY_ESC, KEY_F11, KEY_F12, KEY_F3, KEY_F4, KEY_F5, KEY_F6, KEY_F7, KEY_F8, KEY_F9, KEY_F10, KEY_BACKSPACE},
+  {'`', '!', '"', '£', '$', '%', '^', '&', '*', '(', ')', '_'},
+  {KEY_TAB, 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{'},
+  {KEY_LEFT_CTRL, KEY_CAPS_LOCK,'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':'},
+  {KEY_LEFT_SHIFT, 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', KEY_RIGHT_SHIFT},
+  {KEY_LEFT_ALT, KEY_LEFT_GUI, ' ', KEY_RIGHT_GUI, KEY_RIGHT_ALT, KEY_DELETE, KEY_PAGE_DOWN, KEY_LEFT_ARROW, KEY_UP_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW, KEY_RETURN},
+  {'+', '|', '}', '@', '(', ')', '/', '*', '-', '+', KEY_RETURN, '.'},
+  {'1', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', ' ', }
+
+};
+
+char capsKeys[ROWS][COLS] = {
+
+  //{KEY_ESC, KEY_F1, KEY_F2, KEY_F3, KEY_F4, KEY_F5, KEY_F6, KEY_F7, KEY_F8, KEY_F9, KEY_F10, KEY_BACKSPACE},
+//  {'`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-'},
+//  {KEY_TAB, 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '['},
+//  {KEY_LEFT_CTRL, KEY_CAPS_LOCK,'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';'},
+//  {KEY_LEFT_SHIFT, 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', KEY_RIGHT_SHIFT},
+//  {KEY_LEFT_ALT, KEY_LEFT_GUI, ' ', KEY_RIGHT_GUI, KEY_RIGHT_ALT, KEY_DELETE, KEY_PAGE_DOWN, KEY_LEFT_ARROW, KEY_UP_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW, KEY_RETURN},
+//  {'=', '\\', ']', '#', '(', ')', '/', '*', '-', '+', KEY_RETURN, '.'},
+//  {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', ' ', }
+
+  {KEY_ESC, KEY_F11, KEY_F12, KEY_F3, KEY_F4, KEY_F5, KEY_F6, KEY_F7, KEY_F8, KEY_F9, KEY_F10, KEY_BACKSPACE},
+  {'`', '!', '"', '£', '$', '%', '^', '&', '*', '(', ')', '_'},
+  {KEY_TAB, 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{'},
+  {KEY_LEFT_CTRL, KEY_CAPS_LOCK,'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':'},
+  {KEY_LEFT_SHIFT, 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', KEY_RIGHT_SHIFT},
+  {KEY_LEFT_ALT, KEY_LEFT_GUI, ' ', KEY_RIGHT_GUI, KEY_RIGHT_ALT, KEY_DELETE, KEY_PAGE_DOWN, KEY_LEFT_ARROW, KEY_UP_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW, KEY_RETURN},
+  {'+', '|', '}', '@', '(', ')', '/', '*', '-', '+', KEY_RETURN, '.'},
+  {'1', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', ' ', }
+
+};
+// Create the 3 key layouts
+Keypad directLayout( makeKeymap(directKeys), rowPins, colPins, sizeof(rowPins), sizeof(colPins) );
+Keypad shiftLayout( makeKeymap(shiftKeys), rowPins, colPins, sizeof(rowPins), sizeof(colPins) );
+Keypad capsLayout( makeKeymap(capsKeys), rowPins, colPins, sizeof(rowPins), sizeof(colPins) );
+
+byte Layout = 0;
+char Key = 0;
+byte State = 0;
+const bool KeybInit = true;
+
+
+//Setup 
+
+void setup() {
+  Keyboard.begin();
+  
+  
+  directLayout.begin( makeKeymap(directKeys) );
+  shiftLayout.begin( makeKeymap(shiftKeys) );
+  capsLayout.begin( makeKeymap(capsKeys) );
+
+  // KeybInit
+  if (KeybInit) {
+ 
+  }
+       }
+
+void loop() {
+  getKey();
+}
+
+void respondToKey(char key, byte state) {
+  switch (state) {
+    case PRESSED:
+     
+      if (key == 1) {
+        Layout++;
+        key = 0;
+        delay(400);
+      } 
+      else {
+        if (Layout == 3) {
+
+        Keyboard.press(KEY_LEFT_CTRL); 
+        if ((key == KEY_RIGHT_ARROW)||(key == KEY_LEFT_ARROW)||(key == KEY_UP_ARROW)||(key == KEY_DOWN_ARROW)){
+        Keyboard.press(KEY_LEFT_SHIFT);
+                   
+        }
+          else
+          {    
+                
+          }
+        }
+        Keyboard.press(key);
+      }
+      break;
+    case HOLD:
+      break;
+    case RELEASED:
+      Keyboard.releaseAll();
+      break;
+  }
+}
+
+
+void getKey() {
+  switch (Layout) {
+    case 0:
+      Key = directLayout.getKey();
+      State = directLayout.getState();
+      break;
+    case 1:
+      Key = shiftLayout.getKey();
+      State = shiftLayout.getState();
+      break;
+    case 2:
+      Key = capsLayout.getKey();
+      State = capsLayout.getState();
+       break;
+    default:
+      Layout = 0;
+      State = 0;
+  }
+
+  respondToKey(Key, State);
+
+}
