@@ -4,8 +4,8 @@ This is the Ongoing project of the A500Mini internal functional keyboard based i
 
 Actually it is working as a Prototype with some pendig things in programation:
 
-1.- No double or triple key is admitted yet 
-2.- Keypad launch characters but not the keypad keycodes yet
+1.- No double or triple key is admitted yet  ---> SOLVED
+2.- Keypad launch characters but not the keypad keycodes yet ---> SOLVED
 
 At the hardware level the PCB design is ON GOING. It will have a fully USB keyboard. Anyway... it will have a secondary board with:
 
