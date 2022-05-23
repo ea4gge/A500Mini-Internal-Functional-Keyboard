@@ -24,7 +24,18 @@ At the hardware level the PCB design is ON GOING. It will have a fully USB keybo
 In the Project is also work in progress all the mechanical jobs for to do:
 
 1.- Separate the keys of the original keyboard without damage the keys. Yes, we want to use the originals, not other keys
+
 2.- Align the keycaps with the switches for the final mount
+
+<br>
+<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/A500Mini_Photos/photo_2022-05-14_21-37-53.jpg"/>
+<br>
+
+
+<br>
+<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/A500Mini_Photos/photo_2022-05-18_14-35-09.jpg"/>
+<br>
+
 
 All the mechanical procedures are made by Kikems_Retro.
 
