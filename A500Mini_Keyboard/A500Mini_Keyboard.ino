@@ -42,8 +42,6 @@ unsigned long startTime;
 
 void setup() {
   Keyboard.begin();
-    loopCount = 0;
-    startTime = millis();
 
   // KeybInit
   if (KeybInit) {
@@ -52,12 +50,7 @@ void setup() {
 }
 
 void loop() {
-    loopCount++;
-    if ( (millis()-startTime)>5000 ) {
-        startTime = millis();
-        loopCount = 0;
-    }
-    
+   
     // Fills kpd.key[ ] array with up-to 10 active keys.
     // Returns true if there are ANY active keys.
     if (kpd.getKeys())
@@ -67,110 +60,19 @@ void loop() {
             if ( kpd.key[i].stateChanged )   // Only find keys that have changed state.
             {
                 switch (kpd.key[i].kstate) {  // Report active key state : IDLE, PRESSED, HOLD, or RELEASED
-                    case PRESSED:
-               Keyboard.press(kpd.key[i].kchar);
-               break;
 
-                    case HOLD:
-                Keyboard.press(kpd.key[i].kchar);
-                break;
+                  case PRESSED:
+     Keyboard.press(kpd.key[i].kchar);
+     break;
 
-                    case RELEASED:
-               Keyboard.releaseAll();
-/*               for (int i=0; i<LIST_MAX; i++){
-                if (kpd.key[i].kchar == char(KEY_LEFT_GUI|KEY_F2)) {
-                  
-               Keyboard.press(KEY_F12);
-                }
-               }
-*/               
-               for (int i=0; i<LIST_MAX; i++){
-                if (kpd.key[i].kchar == char(KEY_LEFT_GUI|KEY_F2)) {
-                  
-               Keyboard.press(KEY_F12);
-                }
-                else
-                if (kpd.key[i].kchar == char(KEY_LEFT_SHIFT)) {
-               
-               Keyboard.press(KEY_LEFT_SHIFT);
-               switch (kpd.key[i].kstate) {
-                      case RELEASED:
-               Keyboard.releaseAll();
-               }
-               }
-                if (kpd.key[i].kchar == char(KEY_RIGHT_SHIFT)) {
-               
-               Keyboard.press(KEY_RIGHT_SHIFT);
-               switch (kpd.key[i].kstate) {
-                      case RELEASED:
-               Keyboard.releaseAll();
-               }
-               }
-                    case RELEASED:
-   //            Keyboard.releaseAll();
-  //             for (int i=0; i<LIST_MAX; i++){
-  //              if (kpd.key[i].kchar == char(KEY_LEFT_SHIFT)&&(KEY_F2)) {
-               
-   //            Keyboard.press(KEY_F12);
-               //switch (kpd.key[i].kstate) {
-           //           case RELEASED:
-            //   Keyboard.releaseAll();
-     //          }
-       //        }
-                if (kpd.key[i].kchar == char(KEY_LEFT_CTRL)) {
-               
-               Keyboard.press(KEY_LEFT_CTRL);
-               switch (kpd.key[i].kstate) {
-                      case RELEASED:
-               Keyboard.releaseAll();
-               }
-               }
-                if (kpd.key[i].kchar == char(KEY_LEFT_CTRL)) {
-               
-               Keyboard.press(KEY_LEFT_CTRL);
-               switch (kpd.key[i].kstate) {
-                      case RELEASED:
-               Keyboard.releaseAll();
-               }
-               }
-/*                if (kpd.key[i].kchar == char(KEY_LEFT_GUI)) {
-               
-               Keyboard.press(KEY_LEFT_GUI);
-               switch (kpd.key[i].kstate) {
-                      case RELEASED:
-               Keyboard.releaseAll();
-               }
-               }
-                if (kpd.key[i].kchar == char(KEY_RIGHT_GUI)) {
-               
-               Keyboard.press(KEY_RIGHT_GUI);
-               switch (kpd.key[i].kstate) {
-                      case RELEASED:
-               Keyboard.releaseAll();
-               }
-               }*/
-                if (kpd.key[i].kchar == char(KEY_LEFT_ALT)) {
-               
-               Keyboard.press(KEY_LEFT_ALT);
-               switch (kpd.key[i].kstate) {
-                      case RELEASED:
-               Keyboard.releaseAll();
-               }
-               }
-                if (kpd.key[i].kchar == char(KEY_RIGHT_ALT)) {
-               
-               Keyboard.press(KEY_RIGHT_ALT);
-               switch (kpd.key[i].kstate) {
-                      case RELEASED:
-               Keyboard.releaseAll();
-               }
-               }
+case HOLD:
+      Keyboard.press(kpd.key[i].kchar);
+      break;
 
-              }
-                break;
-                  
-               
-                    case IDLE:
+case RELEASED:
+       Keyboard.release(kpd.key[i].kchar);
+       break;
+                  case IDLE:
  //               Keyboard.releaseAll();        
                   break;
                    
@@ -180,4 +82,3 @@ void loop() {
         }
     }
 }
-//}
