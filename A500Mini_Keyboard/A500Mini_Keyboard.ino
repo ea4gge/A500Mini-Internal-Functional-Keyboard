@@ -77,7 +77,19 @@ void loop() {
 
                     case RELEASED:
                Keyboard.releaseAll();
+/*               for (int i=0; i<LIST_MAX; i++){
+                if (kpd.key[i].kchar == char(KEY_LEFT_GUI|KEY_F2)) {
+                  
+               Keyboard.press(KEY_F12);
+                }
+               }
+*/               
                for (int i=0; i<LIST_MAX; i++){
+                if (kpd.key[i].kchar == char(KEY_LEFT_GUI|KEY_F2)) {
+                  
+               Keyboard.press(KEY_F12);
+                }
+                else
                 if (kpd.key[i].kchar == char(KEY_LEFT_SHIFT)) {
                
                Keyboard.press(KEY_LEFT_SHIFT);
@@ -94,6 +106,17 @@ void loop() {
                Keyboard.releaseAll();
                }
                }
+                    case RELEASED:
+   //            Keyboard.releaseAll();
+  //             for (int i=0; i<LIST_MAX; i++){
+  //              if (kpd.key[i].kchar == char(KEY_LEFT_SHIFT)&&(KEY_F2)) {
+               
+   //            Keyboard.press(KEY_F12);
+               //switch (kpd.key[i].kstate) {
+           //           case RELEASED:
+            //   Keyboard.releaseAll();
+     //          }
+       //        }
                 if (kpd.key[i].kchar == char(KEY_LEFT_CTRL)) {
                
                Keyboard.press(KEY_LEFT_CTRL);
@@ -157,3 +180,4 @@ void loop() {
         }
     }
 }
+//}
