@@ -5,7 +5,7 @@
 <br>
 
 <br>
-<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/PCB.jpg"/>
+<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/A500Mini_Photos/PCB.jpg"/>
 <br>
 
 
