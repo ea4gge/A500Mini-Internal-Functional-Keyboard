@@ -21,7 +21,7 @@
 This is the Ongoing project of the A500Mini internal functional keyboard based in 32U4 processor (Arduino leonardo, for example).
 
 
-Actually it is working as a Prototype with some pendig things in programation:-->pendig to program the caps lock led
+Actually it is working as a Prototype with some pendig things in programation:-->30/03/2023: -->Pendig to program the caps lock led
 
 1.- No double or triple key is admitted yet  ---> SOLVED
 
