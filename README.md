@@ -1,10 +1,12 @@
 # A500Mini-Internal-Functional-Keyboard
 
 <br>
-<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/3D_Model.jpg"/>
+<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/3D_new.png"/>
 <br>
 
-
+<br>
+<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/pcb.png"/>
+<br>
 
 
 <br>
