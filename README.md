@@ -21,7 +21,7 @@
 This is the Ongoing project of the A500Mini internal functional keyboard based in 32U4 processor (Arduino leonardo, for example).
 
 
-Actually it is working as a Prototype with some pendig things in programation:
+Actually it is working as a Prototype with some pendig things in programation:-->pendig to program the caps lock led
 
 1.- No double or triple key is admitted yet  ---> SOLVED
 
@@ -29,7 +29,7 @@ Actually it is working as a Prototype with some pendig things in programation:
 
 At the hardware level the PCB design is ON GOING. -->Done
 
-It will have a fully USB keyboard. Anyway... it will have a secondary board with: --->DONE
+It will have a fully USB keyboard. Anyway... it will have a secondary board with: --->DONE --> Waiting for the new PCB's for Test
 
 - 1 USB 2.0 4 ports Hub. The idea is to use a port of the 3 of the A500 board for the hub's imput, use one port of the hub for to give output to the connector of the port used for the hub imput.
 - One SD reader directly in front of the Floppy Disk Drive "input" of the mini
