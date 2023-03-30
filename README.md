@@ -29,14 +29,16 @@ Actually it is working as a Prototype with some pendig things in programation:--
 
 At the hardware level the PCB design is ON GOING. -->Done
 
-It will have a fully USB keyboard. Anyway... it will have a secondary board with: --->DONE --> Waiting for the new PCB's for Test
+It will have a fully USB keyboard. Anyway... it will have a secondary board with: --->DONE --> 30/03/2023: -->Waiting for the new PCB's for Test
 
 - 1 USB 2.0 4 ports Hub. The idea is to use a port of the 3 of the A500 board for the hub's imput, use one port of the hub for to give output to the connector of the port used for the hub imput.
 - One SD reader directly in front of the Floppy Disk Drive "input" of the mini
 - One port for the keyboard.
 - One free port, for Wifi or other porpuses
 
-IN THIS MOMENT THE NEXT STEEP IS TO SEND TO PCBWay THE DESIGN FOR PROTOTYPE BOARDS. Any values of the components are not added yet. I will do during this week
+IN THIS MOMENT THE NEXT STEEP IS TO SEND TO PCBWay THE DESIGN FOR PROTOTYPE BOARDS.--> 30/03/2023: --> DONE, Sent the last version to PCBWAY, Waiting new board for test.
+
+Any values of the components are not added yet. I will do during this week --> 30/03/2023: --> Pending
 
 
 In the Project is also work in progress all the mechanical jobs for to do:
