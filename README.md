@@ -1,4 +1,4 @@
-# A500Mini-Internal-Functional-Keyboard
+# The A500Mini AmigaWave and RetroWiki's Internal Functional Keyboard Project
 
 <br>
 <img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/A500Mini_Photos/0160.jpg"/>
