@@ -22,8 +22,11 @@ Actually it is working as final release, feel free to use, modify, recreate, ...
 The features:
 
 1.- HID internal fully functional keyboard, with F12 key in the "eject" button of the disk drive, CAPS Lock led, ...
+
 2.- Internal 4 USB's HUB: One for the keyboard, one for the SD reader, one internal free (for network, for example) tha last one for the rear original placed USB on the main unit (because one of the original populated USB must be used por the hub's imput)
+
 3.- SD card's reader exactly in the floppy disk's place.
+
 4.- A lot of smiles after the fabrication :D 
 
 The readme file and the help file for the fabrication is WIP at the moment.
