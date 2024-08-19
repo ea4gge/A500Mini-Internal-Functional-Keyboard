@@ -5,6 +5,14 @@
 
 <br>
 
+
+This is project of the A500Mini internal functional keyboard, based in 32U4 processor (Arduino leonardo, for example).
+
+
+Actually it is working as final release, feel free to use, modify, recreate, ...
+
+
+
 <br>
 <img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/A500Mini_Photos/0158.jpg"/>
 <br>
@@ -14,12 +22,18 @@
 <img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/A500Mini_Photos/0159.jpg"/>
 <br>
 
-This is project of the A500Mini internal functional keyboard, based in 32U4 processor (Arduino leonardo, for example).
+<br>
+<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/A500Mini_Photos/3D_KeyBoar_Final.png"/>
+
+<br>
+
+<br>
+<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/A500Mini_Photos/3D_Hub_Final_1.png"/>
+
+<br>
 
 
-Actually it is working as final release, feel free to use, modify, recreate, ...
-
-The features:
+# The features:
 
 1.- HID internal fully functional keyboard, with F12 key in the "eject" button of the disk drive, CAPS Lock led, ...
 
