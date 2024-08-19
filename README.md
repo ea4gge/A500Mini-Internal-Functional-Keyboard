@@ -6,12 +6,12 @@
 <br>
 
 <br>
-<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/0158.jpg"/>
+<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/A500Mini_Photos/0158.jpg"/>
 <br>
 
 
 <br>
-<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/0159.jpg"/>
+<img height="700" src="https://github.com/ea4gge/A500Mini-Internal-Functional-Keyboard/blob/main/A500Mini_Photos/0159.jpg"/>
 <br>
 
 This is project of the A500Mini internal functional keyboard, based in 32U4 processor (Arduino leonardo, for example).
